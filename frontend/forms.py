@@ -8,7 +8,6 @@ from .utils import get_grouped_sets
 
 
 class LabelGeneratorForm(forms.Form):
-
     sets = forms.MultipleChoiceField(
         widget=forms.CheckboxSelectMultiple,
     )
