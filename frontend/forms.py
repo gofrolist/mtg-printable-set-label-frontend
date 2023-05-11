@@ -1,5 +1,4 @@
 from crispy_forms import layout
-from crispy_forms.bootstrap import PrependedText
 from crispy_forms.helper import FormHelper
 from django import forms
 from django.conf import settings

@@ -42,8 +42,6 @@ def homepage(request):
                 zipfile_path = Path(tempdir) / "labels.zip"
                 with zipfile.ZipFile(zipfile_path, "w") as myzip:
                     path = Path(tempdir)
-                    for f in path.glob("*.svg"):
-                        myzip.write(f, arcname=f.name)
                     for f in path.glob("*.pdf"):
                         myzip.write(f, arcname=f.name)
 
