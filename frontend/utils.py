@@ -20,18 +20,18 @@ EXCLUDED_SETS = (
     "cmb1",  # Mystery Booster Playtest Cards
     "amh1",  # Modern Horizon Art Series
     "cmb2",  # Mystery Booster Playtest Cards Part Deux
-    "fbb",   # Foreign Black Border
-    "sum",   # Summer Magic / Edgar
-    "4bb",   # Fourth Edition Foreign Black Border
+    "fbb",  # Foreign Black Border
+    "sum",  # Summer Magic / Edgar
+    "4bb",  # Fourth Edition Foreign Black Border
     "bchr",  # Chronicles Foreign Black Border
-    "rin",   # Rinascimento
-    "ren",   # Renaissance
-    "rqs",   # Rivals Quick Start Set
-    "itp",   # Introductory Two-Player Set
-    "sir",   # Shadows over Innistrad Remastered
-    "sis",   # Shadows of the Past
-    "cst",   # Coldsnap Theme Decks
-    "scd",   # Starter Commander Decks - set has an icon issue
+    "rin",  # Rinascimento
+    "ren",  # Renaissance
+    "rqs",  # Rivals Quick Start Set
+    "itp",  # Introductory Two-Player Set
+    "sir",  # Shadows over Innistrad Remastered
+    "sis",  # Shadows of the Past
+    "cst",  # Coldsnap Theme Decks
+    "scd",  # Starter Commander Decks - set has an icon issue
 )
 
 
