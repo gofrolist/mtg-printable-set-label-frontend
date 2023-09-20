@@ -11,14 +11,14 @@ class LabelGeneratorForm(forms.Form):
         widget=forms.CheckboxSelectMultiple,
     )
 
-    paper_size = forms.ChoiceField(
-        choices=(
-            ("letter", "Letter Paper (8.5in * 11in)"),
-            ("a4", "A4 Paper (210mm * 297mm)"),
-        ),
-        help_text="Letter paper is common in North America. A4 paper is used everywhere else.",
-        widget=forms.RadioSelect,
-    )
+    # labels_template = forms.ChoiceField(
+    #     choices=(
+    #         ("30", "30 per page (Avery Template Presta® 94200)"),
+    #         ("24", "24 per page (Avery Template Presta® 94221)"),
+    #     ),
+    #     help_text="Tested with Avery blank labels 8460.",
+    #     widget=forms.RadioSelect,
+    # )
 
     def __init__(self, *args, **kwargs):
         sets = get_grouped_sets()
@@ -40,7 +40,7 @@ class LabelGeneratorForm(forms.Form):
             kwargs["initial"] = {}
         kwargs["initial"].update(
             {
-                "paper_size": "letter",
+                # "labels_template": "30",
                 "sets": default_sets,
             }
         )
@@ -67,13 +67,13 @@ class LabelGeneratorForm(forms.Form):
                     "<li class='list-inline-item'><a class='quick-update' href='#' data-selector='[data-set-none]' data-target='.sets-columns input'>Select none</a></li>"
                     "</ul>"
                 ),
-                "paper_size",
+                # "labels_template",
                 css_class="my-3",
             ),
             layout.HTML("<hr class='mb-4'>"),
             layout.Submit(
                 "submit",
-                "Generate SVGs and PDFs as a downloadable .zip",
+                "Generate PDFs as a downloadable .zip",
                 css_class="btn btn-primary btn-lg btn-block",
             ),
         )
