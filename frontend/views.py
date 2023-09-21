@@ -21,14 +21,15 @@ def homepage(request):
         form = LabelGeneratorForm(request.POST)
         if form.is_valid():
             sets = form.cleaned_data["sets"]
-            paper_size = form.cleaned_data["paper_size"]
+            # labels_template = form.cleaned_data["labels_template"]
+            labels_template = "30"
 
             with tempfile.TemporaryDirectory() as tempdir:
                 subprocess.check_call(
                     [
                         "mtglabels",
-                        "--paper-size",
-                        paper_size,
+                        "--labels-per-sheet",
+                        labels_template,
                         "--output-dir",
                         tempdir,
                         *sets,
