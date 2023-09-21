@@ -40,13 +40,16 @@ def homepage(request):
                     },
                     cwd=str(settings.BASE_DIR),
                 )
-                zipfile_path = Path(tempdir) / "labels.zip"
-                with zipfile.ZipFile(zipfile_path, "w") as myzip:
-                    path = Path(tempdir)
-                    for f in path.glob("*.pdf"):
-                        myzip.write(f, arcname=f.name)
-
-                return FileResponse(open(zipfile_path, "rb"), filename="labels.zip")
+                # zipfile_path = Path(tempdir) / "labels.zip"
+                # with zipfile.ZipFile(zipfile_path, "w") as myzip:
+                #     path = Path(tempdir)
+                #     for f in path.glob("*.pdf"):
+                #         myzip.write(f, arcname=f.name)
+                # return FileResponse(open(zipfile_path, "rb"), filename="labels.zip")
+                return FileResponse(
+                    open(Path(tempdir) / "combined_labels.pdf", "rb"),
+                    filename="combined_labels.pdf",
+                )
     else:
         form = LabelGeneratorForm()
 
