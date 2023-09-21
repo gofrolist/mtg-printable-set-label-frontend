@@ -73,7 +73,7 @@ class LabelGeneratorForm(forms.Form):
             layout.HTML("<hr class='mb-4'>"),
             layout.Submit(
                 "submit",
-                "Generate PDFs as a downloadable .zip",
+                "Generate PDF",
                 css_class="btn btn-primary btn-lg btn-block",
             ),
         )
