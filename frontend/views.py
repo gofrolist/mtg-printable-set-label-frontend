@@ -62,7 +62,9 @@ def homepage(request):
         form = LabelGeneratorForm(request.POST)
         if form.is_valid():
             sets = form.cleaned_data["sets"]
-            labels_template = form.cleaned_data.get("labels_template", "30")  # Default template value
+            labels_template = form.cleaned_data.get(
+                "labels_template", "30"
+            )  # Default template value
 
             # Generate PDF labels and stream the response
             pdf_content = generate_labels(sets, labels_template)
@@ -72,7 +74,9 @@ def homepage(request):
                     pdf_content,
                     content_type="application/pdf",
                 )
-                response["Content-Disposition"] = 'attachment; filename="combined_labels.pdf"'
+                response[
+                    "Content-Disposition"
+                ] = 'attachment; filename="combined_labels.pdf"'
                 return response
             else:
                 message = "PDF generation failed."
