@@ -7,6 +7,6 @@ This is a web frontend for the command line
 It is deployed on [Fly.io](https://mtg-printable-label.fly.dev/).
 
 - Print on Avery Address Labels
-  - for inkjet printer [Avery 8460](https://amzn.to/3rjCk0g)
-  - for laser printer [Avery 5160](https://amzn.to/46kRnpv)
-- Attach set labels to [BCW Tall Trading Card Dividers](https://amzn.to/46l21fT)
+  - for inkjet printer [Avery 8460](https://www.amazon.com/Avery-Address-Printers-Permanent-Adhesive/dp/B00004Z6JX)
+  - for laser printer [Avery 5160](https://www.amazon.com/Avery-Address-Labels-Laser-Printers/dp/B00006B8FZ)
+- Attach set labels to [BCW Tall Trading Card Dividers](https://www.amazon.com/dp/B00S3FF1PI)
