@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "frontend"
+version = "0.0.20"
+description = "Magic: the Gathering Printable Set Label Frontend"
+readme = "README.md"
+license = "MIT"
+authors = ["Evgenii Vasilenko <gmrnsk@gmail.com>"]
+maintainers = ["Evgenii Vasilenko <gmrnsk@gmail.com>"]
+homepage = "https://mtg-printable-label.fly.dev/"
+repository = "https://github.com/gofrolist/mtg-printable-set-label-frontend"
+
+[tool.poetry.dependencies]
+python = '^3.10'
+crispy-bootstrap4 = "==2023.1"
+django = "==5.0"
+django-crispy-forms = "==2.1"
+django-debug-toolbar = "==4.2.0"
+django-environ = "==0.11.2"
+gunicorn = "==21.2.0"
+requests = ">=2,<3"
+whitenoise = "==6.6.0"
+mtglabels = {git = "https://github.com/gofrolist/mtg-printable-set-label-generator.git", tag = "v0.0.20"}
+
+[tool.poetry.group.dev.dependencies]
+black = "==23.11.0"
+pre-commit = "==3.5.0"
+reorder-python-imports = "==3.12.0"
+tox = "==4.11.4"
+
+[build-system]
+requires = ["poetry-core>=1.8.1"]
+build-backend = "poetry.core.masonry.api"

@@ -1,41 +1,53 @@
-ARG PYTHON_VERSION=3.10-slim-buster
+ARG PYTHON_VERSION=3.10-slim
 
-FROM python:${PYTHON_VERSION}
+FROM python:${PYTHON_VERSION} as builder
 
-ENV DEBIAN_FRONTEND=noninteractive
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=true \
+    POETRY_VIRTUALENVS_IN_PROJECT=true
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends git libcairo2 && \
-    mkdir -p /code
-
-WORKDIR /code
+WORKDIR /app
 
 COPY . .
 
-RUN pip install \
-        --no-cache-dir \
+RUN --mount=type=cache,mode=0755,target=/root/.cache/pip \
+    pip install \
         --disable-pip-version-check \
         --upgrade \
         pip \
-        pipenv \
+        poetry \
         setuptools \
-        wheel && \
-    pipenv install --deploy --system
+        wheel
 
-RUN python manage.py collectstatic --noinput
+RUN --mount=type=cache,mode=0755,target=/root/.cache/pypoetry \
+    poetry install \
+        --without dev
+
+##################
+# runtime
+##################
+
+FROM python:${PYTHON_VERSION} as runtime
+
+ENV PATH="/app/.venv/bin:$PATH"
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libcairo2 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY --from=builder /app /app
 
 # Run the container unprivileged
-RUN addgroup www && \
-    useradd -g www www && \
-    chown -R www:www /code
+RUN mkdir static && \
+    addgroup www && \
+    useradd --home-dir /app --gid www www  && \
+    chown -R www:www /app
 USER www
-
-# Output information about the build
-# These files can be read by the application
-RUN git log -n 1 --pretty=format:"%h" > GIT_COMMIT && \
-    date -u +'%Y-%m-%dT%H:%M:%SZ' > BUILD_DATE
 
 EXPOSE 8000
 
