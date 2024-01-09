@@ -13,7 +13,6 @@ from pathlib import Path
 import environ
 from django.core.exceptions import ImproperlyConfigured
 
-
 log = logging.getLogger(__name__)  # noqa
 
 # Read environment variables used to configure the app

@@ -5,7 +5,7 @@
     <option name="pathToExecutable" value="$USER_HOME$/.pyenv/shims/black" />
     <option name="sdkName" value="Python 3.10 (mtgfrontend)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (mtgfrontend)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (mtg-printable-set-label-frontend)" project-jdk-type="Python SDK" />
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>

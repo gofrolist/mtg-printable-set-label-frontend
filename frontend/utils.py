@@ -4,6 +4,25 @@ import logging
 import requests
 from django.core.cache import cache
 from django.utils import timezone
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+# Retry Strategy for requests
+retry_strategy = Retry(
+    total=3,  # Total number of retries to allow
+    status_forcelist=[
+        429,
+        500,
+        502,
+        503,
+        504,
+    ],  # Status codes to retry    allowed_methods=
+    allowed_methods=["HEAD", "GET", "OPTIONS"],  # HTTP methods to retry
+    backoff_factor=1,  # Backoff factor for retries
+)
+adapter = HTTPAdapter(max_retries=retry_strategy)
+session = requests.Session()
+session.mount("https://", adapter)  # Mount the retry strategy
 
 # Constants
 SCRYFALL_SETS_API_URL = "https://api.scryfall.com/sets"
@@ -41,7 +60,7 @@ def get_scryfall_set_data():
 
     def fetch_sets():
         try:
-            resp = requests.get(SCRYFALL_SETS_API_URL)
+            resp = session.get(SCRYFALL_SETS_API_URL)
             resp.raise_for_status()
             sets = resp.json().get("data", [])
             # Save the sets back to the cache

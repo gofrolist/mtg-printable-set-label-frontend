@@ -151,3 +151,15 @@ static
 # flyctl launch added from .tox/py3/.gitignore
 # created by virtualenv automatically
 .tox/py3/**/*
+
+.dockerignore
+.editorconfig
+.git
+.github
+.gitignore
+.idea
+.pre-commit-config.yaml
+Dockerfile
+fly.toml
+tox.ini
+Procfile
