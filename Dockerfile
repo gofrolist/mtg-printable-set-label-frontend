@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=3.10-slim
+ARG PYTHON_VERSION=3.11-slim
 
 FROM python:${PYTHON_VERSION} as builder
 
@@ -14,7 +14,6 @@ COPY . .
 
 RUN --mount=type=cache,mode=0755,target=/root/.cache/pip \
     pip install \
-        --disable-pip-version-check \
         --upgrade \
         pip \
         poetry \
@@ -23,7 +22,8 @@ RUN --mount=type=cache,mode=0755,target=/root/.cache/pip \
 
 RUN --mount=type=cache,mode=0755,target=/root/.cache/pypoetry \
     poetry install \
-        --without dev
+        --without dev \
+        --no-root
 
 ##################
 # runtime

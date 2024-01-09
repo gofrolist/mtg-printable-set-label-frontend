@@ -1,7 +1,6 @@
 from .base import *  # noqa
 from .base import env
 
-
 # Django Settings
 # https://docs.djangoproject.com/en/3.2/ref/settings/
 # --------------------------------------------------------------------------
