@@ -22,7 +22,7 @@ whitenoise = "==6.7.0"
 mtglabels = {git = "https://github.com/gofrolist/mtg-printable-set-label-generator.git", tag = "v0.0.21"}
 
 [tool.poetry.group.dev.dependencies]
-black = "==24.8.0"
+black = "==24.10.0"
 pre-commit = "==4.0.0"
 reorder-python-imports = "==3.13.0"
 tox = "==4.21.2"
