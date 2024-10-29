@@ -18,7 +18,7 @@ django-debug-toolbar = "==4.4.6"
 django-environ = "==0.11.2"
 gunicorn = "==23.0.0"
 requests = ">=2,<3"
-whitenoise = "==6.7.0"
+whitenoise = "==6.8.1"
 mtglabels = {git = "https://github.com/gofrolist/mtg-printable-set-label-generator.git", tag = "v0.0.21"}
 
 [tool.poetry.group.dev.dependencies]
