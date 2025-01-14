@@ -14,7 +14,7 @@ python = '^3.10'
 crispy-bootstrap4 = "==2024.10"
 django = "==5.1.4"
 django-crispy-forms = "==2.3"
-django-debug-toolbar = "==4.4.6"
+django-debug-toolbar = "==5.0.1"
 django-environ = "==0.11.2"
 gunicorn = "==23.0.0"
 requests = ">=2,<3"
