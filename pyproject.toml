@@ -13,7 +13,7 @@ repository = "https://github.com/gofrolist/mtg-printable-set-label-frontend"
 python = '^3.10'
 crispy-bootstrap4 = "==2024.10"
 django = "==5.1.8"
-django-crispy-forms = "==2.3"
+django-crispy-forms = "==2.4"
 django-debug-toolbar = "==5.1.0"
 django-environ = "==0.12.0"
 gunicorn = "==23.0.0"
