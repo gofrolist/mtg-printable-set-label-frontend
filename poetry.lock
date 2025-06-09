@@ -362,19 +362,22 @@ files = [
 
 [[package]]
 name = "crispy-bootstrap4"
-version = "2024.10"
+version = "2025.6"
 description = "Bootstrap4 template pack for django-crispy-forms"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "crispy-bootstrap4-2024.10.tar.gz", hash = "sha256:503e8922b0f3b5262a6fdf303a3a94eb2a07514812f1ca130b88f7c02dd25e2b"},
-    {file = "crispy_bootstrap4-2024.10-py3-none-any.whl", hash = "sha256:138a97884044ae4c4799c80595b36c42066e4e933431e2e971611e251c84f96c"},
+    {file = "crispy_bootstrap4-2025.6-py3-none-any.whl", hash = "sha256:64bf732b27690c7147bfaa154b4b690217bee81c71731daf5da73de00ee01943"},
+    {file = "crispy_bootstrap4-2025.6.tar.gz", hash = "sha256:69066c33fc9c8841cbd8741a7ec99ad9234f12877b4549490031a47c2c1abd79"},
 ]
 
 [package.dependencies]
 django = ">=4.2"
 django-crispy-forms = ">=2.3"
+
+[package.extras]
+test = ["pytest", "pytest-django"]
 
 [[package]]
 name = "cssselect2"
@@ -1223,4 +1226,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "a66a94c6c6ce81bc54617613b8b552bb44613e291b533d6bac825d5ccd2ab224"
+content-hash = "dffe0207d92e617c2dacb7c734d1fa5e7aea3203b336b9d1d2088fefd065674a"
