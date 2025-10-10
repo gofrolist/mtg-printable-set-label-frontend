@@ -24,7 +24,7 @@ mtglabels = {git = "https://github.com/gofrolist/mtg-printable-set-label-generat
 [tool.poetry.group.dev.dependencies]
 black = "==25.9.0"
 pre-commit = "==4.3.0"
-reorder-python-imports = "==3.15.0"
+reorder-python-imports = "==3.16.0"
 tox = "==4.31.0"
 
 [build-system]
