@@ -1132,14 +1132,14 @@ files = [
 
 [[package]]
 name = "tox"
-version = "4.33.0"
+version = "4.34.0"
 description = "tox is a generic virtualenv management and test command line tool"
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "tox-4.33.0-py3-none-any.whl", hash = "sha256:8582ac5c3ca97095ce88ae6bcd310d22614350ea9751b0e4ad39acad7874e270"},
-    {file = "tox-4.33.0.tar.gz", hash = "sha256:a29244bce3f514f94043e173366aa191c8cf0106ec8ddd18ba53f985acd73cc4"},
+    {file = "tox-4.34.0-py3-none-any.whl", hash = "sha256:dccfb69c60fd32d5d0fee862bb4596b7ccee013b4b6fc4b8ea7a6a1fcf165384"},
+    {file = "tox-4.34.0.tar.gz", hash = "sha256:18f27e064aec1af6fec47f391e39d60974af0a1dc2c6da5030d9c710f4ee95b7"},
 ]
 
 [package.dependencies]
@@ -1250,4 +1250,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "6fb2066718cf193d4cb049a3d5f197fc6e8b7c8938ef0372e6c09ae1b662e680"
+content-hash = "3e8f0e3d50775075d9b0abac5d7a64d16ab92feaab8a148141d1877f46c8d2a6"
