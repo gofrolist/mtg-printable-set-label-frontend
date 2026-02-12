@@ -11,7 +11,7 @@ repository = "https://github.com/gofrolist/mtg-printable-set-label-frontend"
 
 [tool.poetry.dependencies]
 python = '^3.10'
-crispy-bootstrap4 = "==2025.6"
+crispy-bootstrap4 = "==2026.2"
 django = "==5.2.11"
 django-crispy-forms = "==2.5"
 django-debug-toolbar = "==6.2.0"
